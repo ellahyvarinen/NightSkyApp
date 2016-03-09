@@ -1,0 +1,77 @@
+<div class="row hideFromWatch">
+	<div class="col-lg-12">
+		<div ng-controller="CurrentMoonController">
+			<!--
+	<p>First Quarter &#9789;</p>
+	<p>New Moon &#9899;</p>
+	<p>Last Quarter &#9790;</p>
+	<p>Full Moon &#9898;</p>
+	-->
+			<br>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#moonMenu">Moon</a></li>
+				<li><a data-toggle="tab" href="#sunMenu">Sun</a></li>
+			</ul>
+
+			<div class="tab-content">
+
+				<div id="moonMenu" class="tab-pane fade in active">
+					<h3>Moon Today</h3>
+					<h1 class="moonsymbol">&#9790;</h1>
+
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<th>Moon phase name</th>
+									<td class="capitalized">{{ moonInfo.moon.phase.name | lowercase }}</td>
+								</tr>
+
+								<tr>
+									<th>Moon percentage of illumination</th>
+									<td>{{ moonInfo.moon.phase.illum }} %</td>
+								</tr>
+
+								<tr>
+									<th>Age of the moon phase</th>
+									<td>{{ moonInfo.moon.phase.age }} days</td>
+								</tr>
+
+								<tr>
+									<th>Moon phase angle</th>
+									<td>{{ moonInfo.moon.phase.angle * 100 | limitTo:2 }}&deg; (varies from 0&deg; to 180&deg;)</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="sunMenu" class="tab-pane fade">
+					<h3>Sun Today</h3>
+					<h1 class="moonsymbol">&#9925;</h1>
+
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<th>Sunrise</th>
+									<td>{{ moonInfo.sun.rise *1000 | date:'mediumTime' }}</td>
+								</tr>
+
+								<tr>
+									<th>Sunset</th>
+									<td>{{ moonInfo.sun.set * 1000 | date:'mediumTime' }}</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>

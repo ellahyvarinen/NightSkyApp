@@ -1,0 +1,136 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+body {
+}
+
+.container {
+	padding: 0;
+}
+
+.wrapper {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.navbar-default {
+	padding-top: 1em;
+	padding-left: 4em;
+	padding-right: 4em;
+	border-color: #f8f8f8;
+	}
+
+nav {
+	height: 4em;
+	.navbar .navbar-default {
+		background-color: none;
+		border-color: none;
+	}
+	h3 {
+		margin: auto;
+		font-family: 'Lobster', cursive;
+		text-align: center;
+	}
+}
+
+.capitalized { 
+	text-transform: capitalize; 
+}
+
+.moonImage {
+	background-color: #000;
+	margin-top: 4em;
+}
+
+.moonImageBackground {
+	background-color: #000;
+}
+
+img {
+	max-width:100%;
+	height:auto;
+	/*
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	*/
+}
+
+.calculatorText {
+	height: 1em;
+	h6 {
+		font-family: 'Quicksand', sans-serif;
+		color: #FFF;
+		text-shadow: 1px 1px #333;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		position: relative;
+		top: -6em;
+	}
+}
+
+.banner {
+	max-width: 100%;
+	height: auto;
+	background-image:url(/images/moon.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.moonsymbol {
+	font-size: 8em;
+}
+
+
+/* WATCH */
+@media screen and (max-width: 319px) {
+	.hideFromWatch {
+		display: none;
+	}
+	h6 {
+		font-size: 1.3em;
+		position: relative;
+		top: 4em;
+	}
+	.moonImage {
+		margin-top: 25%;
+		margin-bottom: 25%;
+	}
+	body {
+		background-color: #000;
+	}
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+  h6 {
+    font-size: 1.5em;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+     h6 {
+       font-size: 4em;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    h6 {
+      font-size: 4em;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    h6 {
+      font-size: 5em;
+    }
+}

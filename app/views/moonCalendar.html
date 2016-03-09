@@ -1,0 +1,57 @@
+<div class="row hideFromWatch">
+  <div class="col-lg-12">
+
+    <div ng-controller="MoonController">
+      <h3>Moon Calendar</h3>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>From</h4>
+          <label>
+            <div class="input-group date" data-provide="datepicker">
+              <input type="text" class="datepicker form-control" data-date-format="yy-mm-dd" ng-model="from">
+              <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="col-sm-6">
+          <h4>To</h4>
+          <label>
+            <div class="input-group date" data-provide="datepicker">
+              <input type="text" class="datepicker form-control" data-date-format="yy-mm-dd" ng-model="to">
+              <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn btn-md btn-default" ng-click="getMoon()">Search</button>
+      <button type="button" class="btn btn-md btn-default" data-toggle="modal" data-target="#infoModal"><span class="glyphicon glyphicon-question-sign"></span></button>
+
+      <br>
+      <br>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>Date</th>
+              <th>Moon phase</th>
+            </tr>
+
+            <tr id="moonInfo" ng-repeat="moon in moons">
+              <td>{{ moon.dateTimeISO | date:'longDate' }}</td>
+              <td class="capitalized">{{ moon.name }}</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <hr>
+      </div>
+
+    </div>
+  </div>

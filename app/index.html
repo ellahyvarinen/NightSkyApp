@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>NightSky</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+
+</head>
+
+<body ng-app="skyApp">
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <info-modal></info-modal>
+
+  <div class="container">
+
+    <header></header>
+    <banner></banner>
+
+    <div class="calculatorText" id="calculator"></div>
+
+    <div class="wrapper">
+      <forecast></forecast>
+      <sunmoon></sunmoon>
+      <br>
+      <moon-calendar></moon-calendar>
+
+      <div class="footer"></div>
+    </div>
+
+  </div>
+
+
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+
+  <script src="scripts/services/ajaxFactory.js"></script>
+  <script src="scripts/services/locationService.js"></script>
+
+  <script src="scripts/moon/MoonCtrl.js"></script>
+  <script src="scripts/moon/getCurrentMoonCtrl.js"></script>
+  <script src="scripts/controllers/locationCtrl.js"></script>
+  <script src="scripts/controllers/weatherCtrl.js"></script>
+
+  <script src="scripts/directives/header.js"></script>
+  <script src="scripts/directives/banner.js"></script>
+  <script src="scripts/directives/calculator.js"></script>
+  <script src="scripts/directives/forecast.js"></script>
+  <script src="scripts/directives/sunmoon.js"></script>
+  <script src="scripts/directives/moonCalendar.js"></script>
+  <script src="scripts/directives/infoModal.js"></script>
+  <!-- endbuild -->
+
+</body>
+
+</html>

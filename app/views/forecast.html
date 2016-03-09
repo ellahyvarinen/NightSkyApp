@@ -1,0 +1,148 @@
+<div class="row hideFromWatch">
+<div class="col-xs-12">
+
+<br>
+<ul class="nav nav-tabs">
+	<li class="active"><a data-toggle="tab" href="#weatherMenu">Weather</a></li>
+	<li><a data-toggle="tab" href="#forecastMenu">Forecast</a></li>
+	<li><a data-toggle="tab" href="#locationMenu">Location</a></li>
+</ul>
+
+<div class="tab-content">
+
+	<div id="weatherMenu" class="tab-pane fade in active">
+		<div ng-controller="WeatherController">
+			<h3>Weather Today</h3>
+			<br>
+			<p>{{ forecast.periods[0].validTime | date:'longDate' }}</p>
+
+			<img ng-src="images/icons/{{ forecast.periods[0].icon }}" alt="Weather icon">
+			<p>{{ forecast.periods[0].weatherPrimary }}</p>
+
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<tbody>
+						<tr>
+							<th>Temperature</th>
+							<td>{{ forecast.periods[0].avgTempC }} &deg;C</td>
+						</tr>
+
+						<tr>
+							<th>Feels like</th>
+							<td>{{ forecast.periods[0].feelslikeC}} &deg;C</td>
+						</tr>
+
+						<tr>
+							<th>Sky cover percentage</th>
+							<td>{{ forecast.periods[0].sky }} %</td>
+						</tr>
+
+						<tr>
+							<th>Wind speed</th>
+							<td>{{ forecast.periods[0].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+						</tr>
+
+						<tr>
+							<th>Humidity</th>
+							<td>{{ forecast.periods[0].humidity }} %</td>
+						</tr>
+
+						<tr>
+							<th>Ultraviolet index</th>
+							<td>{{ forecast.periods[0].uvi }} (varies from 0 to 12)</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="forecastMenu" class="tab-pane fade">
+		<div ng-controller="WeatherController">
+			<h3>7 days forecast</h3>
+			<br>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>{{ forecast.periods[0].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[1].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[2].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[3].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[4].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[5].validTime | date:'dd.MM.' }}</th>
+							<th>{{ forecast.periods[6].validTime | date:'dd.MM.' }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td>{{ forecast.periods[0].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[1].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[2].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[3].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[4].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[5].validTime | date:'EEEE' }}</td>
+							<td>{{ forecast.periods[6].validTime | date:'EEEE' }}</td>
+						</tr>
+
+						<tr>
+							<th>Forecast</th>
+							<td><img ng-src="images/icons/{{ forecast.periods[0].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[0].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[1].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[1].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[2].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[2].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[3].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[3].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[4].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[4].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[5].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[5].weatherPrimary }}</td>
+							<td><img ng-src="images/icons/{{ forecast.periods[6].icon }}" alt="Weather icon">
+								<br>{{ forecast.periods[6].weatherPrimary }}</td>
+						</tr>
+
+						<tr>
+							<th>Temperature</th>
+							<td>{{ forecast.periods[0].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[1].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[2].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[3].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[4].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[5].avgTempC }} &deg;C</td>
+							<td>{{ forecast.periods[6].avgTempC }} &deg;C</td>
+						</tr>
+
+						<tr>
+							<th>Wind Speed</th>
+							<td>{{ forecast.periods[0].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[1].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[2].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[3].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[4].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[5].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+							<td>{{ forecast.periods[6].windSpeedKPH / 3.6 | limitTo:1 }} m/s</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="locationMenu" class="tab-pane fade" ng-controller="LocationController">
+		<h3>Location</h3>
+		<br>
+		<span class="glyphicon glyphicon-map-marker"></span>
+		<p>{{ location.place.name }}, {{ location.place.countryFull }}</p>
+		<p>{{ location.loc.lat | limitTo:5 }} &deg;N | {{ location.loc.long | limitTo:5 }} &deg;E</p>
+		<br>
+		<!--<button ng-click="coords.coordinates()">Get Coordinates</button>-->
+	</div>
+
+</div>
